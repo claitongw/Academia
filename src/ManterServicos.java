@@ -1,13 +1,12 @@
 public class ManterServicos {
-	int codDescricao;
-	String nomeDescricao;
-	ManterServicos[] arrayServicos = new ManterServicos[15];
+	public int codDescricao;
+	public String nomeDescricao;
 	
 	
-	void incluirServicos(int codDescricao, String nomeDescricao){
-		arrayServicos[codDescricao].codDescricao=codDescricao;
-		arrayServicos[codDescricao].nomeDescricao=nomeDescricao;
-		System.out.println(nomeDescricao+" Incluido com sucesso!");
+
+
+	public void incluirServicos(int x, String nome){
+		
 	}
 	
 
