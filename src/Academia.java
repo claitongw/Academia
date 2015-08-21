@@ -7,25 +7,10 @@ public class Academia {
 
 		Scanner in = new Scanner(System.in);
 		
-		ManterServicos[] arrayServicos = new ManterServicos[15];
+		ManterServicos iServico = new ManterServicos();
 		
-		/*int fechar=1; int escolha=0;
+		iServico.incluirServicos(1, "Pilates");
 		
-		while(fechar==1){
-			System.out.println("1-SERVIÇOS");
-			escolha=in.nextInt();
-			System.out.println("0-FECHAR");	
-		}
-		*/
-				
-		arrayServicos[0]  = new ManterServicos();
-		arrayServicos[1]  = new ManterServicos();
-		arrayServicos[2]  = new ManterServicos();
-		
-		arrayServicos[0].codDescricao=1;
-		arrayServicos[0].nomeDescricao="Claiton";
-		
-		System.out.println(arrayServicos[0].nomeDescricao);
 		
 	}
 
