@@ -1,12 +1,11 @@
 public class ManterServicos {
-	int codDescricao;
-	String nomeDescricao;
-	ManterServicos[] arrayServicos = new ManterServicos[15];
+	public int codDescricao;
+	public String nomeDescricao;
 	
 	
-	void incluirServicos(int cDescricao, String nDescricao){
-		this.arrayServicos[codDescricao].codDescricao=cDescricao;
-		this.arrayServicos[codDescricao].nomeDescricao=nDescricao;
+	
+	public void incluirServicos(int x, String nome){
+		
 	}
 	
 
