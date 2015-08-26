@@ -34,7 +34,7 @@ public class ManterServicos {
 		}
 		System.out.println("SERVIÇO EXCLUIDO COM SUCESSO!");
 	}
-	
+	 
 	public void listarServicos(){
 		for(int x=0;arrayServicos[x]!=null;x++){
 			if(arrayServicos[x].codDescricao>0)
