@@ -1,7 +1,7 @@
 public class ManterServicos {
 	public int codDescricao;
 	public String nomeDescricao;
-	ManterServicos[] arrayServicos = new ManterServicos[15];
+	ManterServicos[] arrayServicos = new ManterServicos[999999];
 	int incremento=0;
 	
 	public void incluirServicos(int cDesc, String nDesc){
@@ -9,6 +9,7 @@ public class ManterServicos {
 		arrayServicos[incremento].codDescricao=cDesc;
 		arrayServicos[incremento].nomeDescricao=nDesc;
 		incremento=incremento+1;
+		System.out.println("Incluido com sucesso");
 	}
 	
 	public void alterarServicos(int cDescAlterar, int cDescNovo, String nDescNovo){
@@ -25,17 +26,18 @@ public class ManterServicos {
 			System.out.println("O CÓDIGO INFORMADO NÃO EXISTE!");
 	}
 	
-	public void excluirServicos(int cDescExcluir){
+	public void excluirServicos(int cDescExcluir){		
 		for(int x=0;arrayServicos[x]!=null;x++){
 			if(arrayServicos[x].codDescricao==cDescExcluir){
-				arrayServicos[x]=arrayServicos[x+1]; 
-				System.out.println("SERVIÇO EXCLUIDO COM SUCESSO!");
+				arrayServicos[x]=new ManterServicos();
 			}
 		}
+		System.out.println("SERVIÇO EXCLUIDO COM SUCESSO!");
 	}
 	
 	public void listarServicos(){
 		for(int x=0;arrayServicos[x]!=null;x++){
+			if(arrayServicos[x].codDescricao>0)
 			System.out.println(arrayServicos[x].codDescricao+" | "+arrayServicos[x].nomeDescricao);
 		}
 	}
