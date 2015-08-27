@@ -37,7 +37,6 @@ public class Menu {
 				int cDesc = in.nextInt();
 				System.out.println("Digite o nome do Serviço");
 				String nDesc = in2.nextLine();
-				
 				mServico.incluirServicos(cDesc, nDesc);
 				break;
 			}case 2:{

@@ -9,7 +9,6 @@ public class ManterServicos {
 		arrayServicos[incremento].codDescricao=cDesc;
 		arrayServicos[incremento].nomeDescricao=nDesc;
 		incremento=incremento+1;
-		System.out.println("Incluido com sucesso");
 	}
 	
 	public void alterarServicos(int cDescAlterar, int cDescNovo, String nDescNovo){
@@ -37,7 +36,7 @@ public class ManterServicos {
 	 
 	public void listarServicos(){
 		for(int x=0;arrayServicos[x]!=null;x++){
-			if(arrayServicos[x].codDescricao>0)
+			if(arrayServicos[x].codDescricao!=0)
 			System.out.println(arrayServicos[x].codDescricao+" | "+arrayServicos[x].nomeDescricao);
 		}
 	}
