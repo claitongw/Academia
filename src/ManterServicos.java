@@ -4,10 +4,10 @@ public class ManterServicos {
 	ManterServicos[] arrayServicos = new ManterServicos[999999];
 	int incremento=0;
 	
-	public void incluirServicos(int cDesc, String nDesc){
+	public void incluirServicos(int c, String n){
 		arrayServicos[incremento] = new ManterServicos();
-		arrayServicos[incremento].codDescricao=cDesc;
-		arrayServicos[incremento].nomeDescricao=nDesc;
+		arrayServicos[incremento].codDescricao=c;
+		arrayServicos[incremento].nomeDescricao=n;
 		incremento=incremento+1;
 	}
 	

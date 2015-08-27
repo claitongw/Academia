@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class Menu {
 	Scanner lerEscolha = new Scanner(System.in);
+	ManterServicos mServico = new ManterServicos();
+	
 	void mostrarMenu(){
 	System.out.println("Menu | Selecione uma opção: ");
 	System.out.println("1 = Turmas:");
@@ -13,22 +15,22 @@ public class Menu {
 	switch(esc){
 		case 4:{
 			mostrarMenuServicos();
+			break;
 		}
 	}
 	
 }
 	
 	void mostrarMenuServicos(){
-		Scanner lerEscolha = new Scanner(System.in);
 		Scanner in = new Scanner(System.in);
 		Scanner in2 = new Scanner(System.in);
-		ManterServicos mServico = new ManterServicos();
 		System.out.println("Menu\\Serviços | Selecione uma opção: ");
 		System.out.println("1 = Incluir:");
 		System.out.println("2 = Alterar:");
 		System.out.println("3 = Consultar:");
-		System.out.println("4 = Excluir:");
-		System.out.println("5 = Voltar:");
+		System.out.println("4 = Listar:");
+		System.out.println("5 = Excluir:");
+		System.out.println("6 =Voltar:");
 		int esc = lerEscolha.nextInt();
 		
 		switch(esc){
@@ -40,10 +42,21 @@ public class Menu {
 				mServico.incluirServicos(cDesc, nDesc);
 				break;
 			}case 2:{
-			//	mServico.alterarServicos(cDescAlterar, cDescNovo, nDescNovo);();
+				System.out.println("Digite o código do evento que deseja alterar:");
+				int cDescAlterar = in.nextInt();
+				System.out.println("Digite o novo código:");
+				int cDescNovo
+				
+				mServico.alterarServicos(cDescAlterar, cDescNovo, nDescNovo);
+			}
+			
+			
+			case 4:{
+				mServico.listarServicos();
 			}
 				
 		}
 		
 	}
+	
 }
