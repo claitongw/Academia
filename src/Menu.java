@@ -39,15 +39,19 @@ public class Menu {
 				int cDesc = in.nextInt();
 				System.out.println("Digite o nome do Serviço");
 				String nDesc = in2.nextLine();
+				
 				mServico.incluirServicos(cDesc, nDesc);
 				break;
 			}case 2:{
 				System.out.println("Digite o código do evento que deseja alterar:");
 				int cDescAlterar = in.nextInt();
 				System.out.println("Digite o novo código:");
-				int cDescNovo
-				
+				int cDescNovo = in.nextInt();
+				System.out.println("Digite o novo nome:");
+				String nDescNovo = in2.nextLine();
+							
 				mServico.alterarServicos(cDescAlterar, cDescNovo, nDescNovo);
+				break;
 			}
 			
 			
