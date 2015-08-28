@@ -1,17 +1,17 @@
 # Academia
 Trabalho da cadeira de Programação III Grau 1
 
-Manter Serviços (Incluir, alterar, excluir, consultar)
-	Int	codDescricao
+ManterServiços (Incluir, alterar, excluir, consultar)
+	Int	codDescricao;
 	String 	nomeDescricao;
 
-Manter Turmas
+ManterTurmas
 	Int 	numeroTurma;
 	Int 	horaInicio;	
 	String	professor;
 	Clientes alunos = new Clientes[5];
 	
-Manter Clientes
+ManterClientes
 	String  nome;
 	Int 	cpf;
 	String 	telefone;
@@ -22,7 +22,7 @@ Manter Clientes
 	String 	estadoCivil;
 	Char	situacao;
 
-Manter Professores
+ManterProfessores
 	String  nome;
 	Int 	cpf;
 	String 	telefone;
