@@ -10,7 +10,9 @@ public class ManterServicos {
 		arrayServicos[incremento].codDescricao=c;
 		arrayServicos[incremento].nomeDescricao=n;
 		incremento=incremento+1;
-		System.out.println("SERVIÇO INCLUIDO COM SUCESSO!");
+		System.out.println("||=============================||");
+		System.out.println("||SERVIÇO INCLUIDO COM SUCESSO!||");
+		System.out.println("||=============================||");
 	}
 	//------------------------------------------
 	public void alterarServicos(int cDescAlterar, int cDescNovo, String nDescNovo){
@@ -27,15 +29,16 @@ public class ManterServicos {
 	}
 	//------------------------------------------
 	public void consultarServicos(int cDescConsultar){//CONSULTA POR CÓDIGO DO SERVIÇO
+		int cont2=1;
 		for(int x=0;arrayServicos[x]!=null;x++){
 			if(arrayServicos[x].codDescricao==cDescConsultar){
 				System.out.println(arrayServicos[x].codDescricao+" | "+arrayServicos[x].nomeDescricao);
-			}else{
-				cont=cont+1;
-			}
 				
+			}else{
+				cont2=cont2+1;
+			}
 		}
-		if(cont==0)
+		if(cont2>1)
 		System.out.println("O CÓDIGO INFORMADO NÃO EXISTE!");
 	}
 	
@@ -67,4 +70,17 @@ public class ManterServicos {
 		}
 	}
 	//------------------------------------------
+	public int validaInclusao(int ret){
+		int ret=0;
+		for(int x=0;arrayServicos[x]!=null;x++){
+			if(arrayServicos[x].codDescricao==ret){
+				System.out.println("O código informado já existe!");
+				ret=1;
+			}
+		
+		return ret;
+		}
+		
+		
+	}
 }

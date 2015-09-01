@@ -34,16 +34,18 @@ public class Menu {
 		int esc = lerEscolha.nextInt();
 		
 		switch(esc){
-			case 1:{//INCLUIR SERVICOS
+			//add new service
+			case 1:{
 				System.out.println("Digite o código do Serviço:");
 				int cDesc = in.nextInt();
 				System.out.println("Digite o nome do Serviço");
 				String nDesc = in2.nextLine();
-				
+				mServico.validaInclusao(cDesc);
 				mServico.incluirServicos(cDesc, nDesc);
 				break;
 			}
-			case 2:{//ALTERAR SERVICOS
+			//alter services
+			case 2:{
 				System.out.println("Digite o código do evento que deseja alterar:");
 				int cDescAlterar = in.nextInt();
 				System.out.println("Digite o novo código:");
@@ -53,23 +55,27 @@ public class Menu {
 				mServico.alterarServicos(cDescAlterar, cDescNovo, nDescNovo);
 				break;
 			}
-			case 3:{//CONSULTAR SERVICOS
+			//consult services
+			case 3:{
 				System.out.println("Escolha o tipo de pesquisa: (1-Código | 2-Nome)");
 				esc = lerEscolha.nextInt();
 				if(esc==1){
-					System.out.println("Qual código deseja consultar:");
+					System.out.println("Qual código deseja consultar:");//if is for code
 					int cDescConsultar = in.nextInt();
 					mServico.consultarServicos(cDescConsultar);
 				}else{
 					if(esc==2){
-					System.out.println("Qual o nome do serviço q deseja consultar?");
+					System.out.println("Qual o nome do serviço q deseja consultar?");//if is for name
 					String nDescConsultar = in2.nextLine();
 					mServico.consultarServicos(nDescConsultar);
 					}
 				}
+				System.out.println("");
 			}
-			case 4:{//LISTAR SERVICOS
-				//mServico.listarServicos();
+			//show all services
+			case 4:{ 
+				System.out.println("Listando serviços cadastrados");
+				mServico.listarServicos();
 			}
 				
 		}
