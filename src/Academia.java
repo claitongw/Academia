@@ -13,8 +13,8 @@ public class Academia {
 		int continuar=1;
 		while(continuar==1){
 			tela.mostrarMenu();
-			System.out.println("Continuar 1:");
-			continuar = ler.nextInt();
+			//System.out.println("Continuar 1:");
+			//continuar = ler.nextInt();
 		}
 		
 	
