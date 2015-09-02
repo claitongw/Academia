@@ -78,9 +78,8 @@ public class ManterServicos {
 				ret=1;
 			}
 		
-		return ret;
-		}
-		
+	return ret;
+		}	
 		
 	}
 }

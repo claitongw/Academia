@@ -40,7 +40,7 @@ public class Menu {
 				int cDesc = in.nextInt();
 				System.out.println("Digite o nome do Serviço");
 				String nDesc = in2.nextLine();
-				mServico.validaInclusao(cDesc);
+				//mServico.validaInclusao(cDesc);
 				mServico.incluirServicos(cDesc, nDesc);
 				break;
 			}
