@@ -36,12 +36,20 @@ public class Menu {
 		switch(esc){
 			//add new service
 			case 1:{
+				int validar;
 				System.out.println("Digite o código do Serviço:");
 				int cDesc = in.nextInt();
 				System.out.println("Digite o nome do Serviço");
 				String nDesc = in2.nextLine();
-				mServico.validaInclusao(cDesc);
-				mServico.incluirServicos(cDesc, nDesc);
+				validar=mServico.validaInclusao(cDesc);
+				if(validar==0){
+					mServico.incluirServicos(cDesc, nDesc);
+				}else{
+					System.out.println("||=============================||");
+					System.out.println("||O CÓDIGO INFORMADO JÁ EXISTE!||");
+					System.out.println("||=============================||");
+				}
+				
 				break;
 			}
 			//alter services
@@ -60,22 +68,29 @@ public class Menu {
 				System.out.println("Escolha o tipo de pesquisa: (1-Código | 2-Nome)");
 				esc = lerEscolha.nextInt();
 				if(esc==1){
-					System.out.println("Qual código deseja consultar:");//if is for code
+					System.out.println("Qual código deseja consultar:");//if code
 					int cDescConsultar = in.nextInt();
 					mServico.consultarServicos(cDescConsultar);
 				}else{
 					if(esc==2){
-					System.out.println("Qual o nome do serviço q deseja consultar?");//if is for name
+					System.out.println("Qual o nome do serviço q deseja consultar?");//if name
 					String nDescConsultar = in2.nextLine();
 					mServico.consultarServicos(nDescConsultar);
 					}
 				}
-				System.out.println("");
+				break;
 			}
 			//show all services
 			case 4:{ 
 				System.out.println("Listando serviços cadastrados");
 				mServico.listarServicos();
+				break;
+			}
+			// delete services
+			case 5:{
+				System.out.println("Qual o codigo do serviço que deseja excluir:");//if name
+				int cDescExcluir = in2.nextInt();
+				mServico.excluirServicos(cDescExcluir);
 			}
 				
 		}

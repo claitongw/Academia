@@ -10,9 +10,12 @@ public class ManterServicos {
 		arrayServicos[incremento].codDescricao=c;
 		arrayServicos[incremento].nomeDescricao=n;
 		incremento=incremento+1;
+		//Mensagens mIncluir = new Mensagens();
+		//mIncluir.incluidoSucesso();
 		System.out.println("||=============================||");
 		System.out.println("||SERVIÇO INCLUIDO COM SUCESSO!||");
 		System.out.println("||=============================||");
+		
 	}
 	//------------------------------------------
 	public void alterarServicos(int cDescAlterar, int cDescNovo, String nDescNovo){
@@ -70,17 +73,14 @@ public class ManterServicos {
 		}
 	}
 	//------------------------------------------
-	public int validaInclusao(int ret){
-		int ret=0;
+	public int validaInclusao(int cDesc){
+		int cont=0;
 		for(int x=0;arrayServicos[x]!=null;x++){
-			if(arrayServicos[x].codDescricao==ret){
-				System.out.println("O código informado já existe!");
-				ret=1;
+			if(arrayServicos[x].codDescricao==cDesc){
+				cont=cont+1;
 			}
-		
-		return ret;
 		}
-		
-		
+		return cont;
 	}
+	//------------------------------------------
 }
