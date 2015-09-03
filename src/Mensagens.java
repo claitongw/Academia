@@ -16,7 +16,7 @@ import java.awt.*;
 		label = new JLabel(mensagem, SwingConstants.CENTER);
 		label.setForeground(Color.black);
 		J.add(label);
-		J.setSize(200,100);
+		J.setSize(400,100);
         getContentPane().add(panel, BorderLayout.CENTER);
         J.setLocationRelativeTo(getFocusCycleRootAncestor());
         J.setAlwaysOnTop(true);

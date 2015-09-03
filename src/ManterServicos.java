@@ -1,10 +1,12 @@
 public class ManterServicos {
 	public int codDescricao;
 	public String nomeDescricao;
+	public static Mensagens msg = new Mensagens();
+	
 	private int incremento=0;
 	private int cont=0;
-	public static Mensagens msg = new Mensagens();
-	ManterServicos[] arrayServicos = new ManterServicos[999999];
+	
+	ManterServicos[] arrayServicos = new ManterServicos[15];//máximo 15 serviços
 	
 	//------------------------------------------------------------------------------------
 	public void incluirServicos(int c, String n){

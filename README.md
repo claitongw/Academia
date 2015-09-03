@@ -23,5 +23,8 @@ ManterClientes
 		private Char	situacao;
 
 ManterProfessores Extends ManterClientes
-
+	String  nome;
+	Int 	cpf;
+	String 	telefone;
+	String 	email;
 	

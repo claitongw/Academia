@@ -1,9 +1,10 @@
 
 public class ManterClientes {
-	public	String  nome;
-	public	int 	cpf;
-	public 	String 	telefone;
-	public	String 	email;
+	private	int 	codigo;
+	private	String  nome;
+	private	String 	cpf;
+	private 	String 	telefone;
+	private	String 	email;
 	private String 	endereço;
 	private int 	nascimento;
 	private char 	sexo;

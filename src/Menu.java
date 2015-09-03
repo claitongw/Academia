@@ -1,11 +1,15 @@
-
+/*
+ * NESTA CLASSE MOSTRAMOS AS OPÇÕES DOS MENUS PARA O USUÁRIO E FAZEMOS AS CHAMADAS PARA OS MÉTODOS.
+ */
 import java.util.Scanner;
 public class Menu {
 	
 	Scanner lerEscolha = new Scanner(System.in);
 	Scanner in = new Scanner(System.in);
 	Scanner in2 = new Scanner(System.in);
+	
 	ManterServicos mServico = new ManterServicos();
+	ManterProfessor mProfessor = new ManterProfessor();
 	public static Mensagens msg = new Mensagens();
 	
 	void mostrarMenu(){
@@ -21,9 +25,12 @@ public class Menu {
 			mostrarMenuServicos();
 			break;
 		}
+		case 3:{
+			mostrarMenuProfessores();
+		}
 	}
 	
-}
+	}
 	
 	void mostrarMenuServicos(){
 		System.out.println("Menu\\Serviços | Selecione uma opção: ");
@@ -95,6 +102,22 @@ public class Menu {
 				
 		}
 		
+	}
+	void mostrarMenuProfessores(){
+		System.out.println("Menu\\Professores | Selecione uma opção: ");
+		System.out.println("1 = Incluir:");
+		System.out.println("2 = Alterar:");
+		System.out.println("3 = Consultar:");
+		System.out.println("4 = Listar:");
+		System.out.println("5 = Excluir:");
+		System.out.println("6 =Voltar:");
+		int esc = lerEscolha.nextInt();
+		
+		switch(esc){
+			case 1:{
+				mProfessor.incluirProfessores(1, "Claiton", "4456", "56546", "clasda");
+			}
+		}
 	}
 	
 }
