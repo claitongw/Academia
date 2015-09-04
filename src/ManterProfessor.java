@@ -1,22 +1,23 @@
 import java.util.ArrayList;
 
 	class Atributos{
-		 	int 	codigo;
-			String  nome;
-			String 	cpf;
-		 	String 	telefone;
-			String 	email;
+		 	
 		
 	}
 
 	public class ManterProfessor{
-
-		//public static Mensagens msg = new Mensagens();
+		public 	int 	codigo;
+		public	String  nome;
+		public	String 	cpf;
+		public	String 	telefone;
+		public	String 	email;
+		ArrayList<ManterProfessor> arrayProfessores = new ArrayList<ManterProfessor>();
+		public static Mensagens msg = new Mensagens();
 	
-	void incluirProfessores(int codigo, String nome, String cpf, String telefone, String email){	//nome, cpf, telefone, email
+	public void incluirProfessores(int codigo, String nome, String cpf, String telefone, String email){	//nome, cpf, telefone, email
 	
-		ArrayList<Atributos> arrayProfessores = new ArrayList<Atributos>();
-		Atributos adiciona = new Atributos();
+		
+		ManterProfessor adiciona = new ManterProfessor();
 		
 		adiciona.codigo=codigo;
 		adiciona.nome=nome;
@@ -25,13 +26,20 @@ import java.util.ArrayList;
 		adiciona.email=email;
 		
 		arrayProfessores.add(adiciona);
-		System.out.println( arrayProfessores );
 		
-		//	msg.mensagemPopUp("Professor "+adiciona.nome+" cadastrado com sucesso!");
+		msg.mensagemPopUp("Professor "+adiciona.nome+" cadastrado com sucesso!");
 		
 	}
 	
 	public void listarProfessores(){
+		int z=arrayProfessores.size();
+		for(int x=0;x<z;x++){
+			System.out.println(arrayProfessores.get(x).codigo);
+			System.out.println(arrayProfessores.get(x).nome);
+			System.out.println(arrayProfessores.get(x).cpf);
+			System.out.println(arrayProfessores.get(x).telefone);
+			System.out.println(arrayProfessores.get(x).email);
+		}
 		
 	}
 }
