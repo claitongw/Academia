@@ -1,45 +1,40 @@
 import java.util.ArrayList;
 
-	class Atributos{
-		 	
-		
-	}
-
 	public class ManterProfessor{
 		public 	int 	codigo;
 		public	String  nome;
 		public	String 	cpf;
 		public	String 	telefone;
 		public	String 	email;
-		ArrayList<ManterProfessor> arrayProfessores = new ArrayList<ManterProfessor>();
+		ArrayList<ManterProfessor> arrayProfessores = new ArrayList<ManterProfessor>();//Incluir, alterar, excluir, consultar, LISTAR
 		public static Mensagens msg = new Mensagens();
 	
 	public void incluirProfessores(int codigo, String nome, String cpf, String telefone, String email){	//nome, cpf, telefone, email
-	
-		
-		ManterProfessor adiciona = new ManterProfessor();
-		
+		ManterProfessor adiciona = new ManterProfessor();		
 		adiciona.codigo=codigo;
 		adiciona.nome=nome;
 		adiciona.cpf=cpf;
 		adiciona.telefone=telefone;
-		adiciona.email=email;
-		
+		adiciona.email=email;	
 		arrayProfessores.add(adiciona);
-		
 		msg.mensagemPopUp("Professor "+adiciona.nome+" cadastrado com sucesso!");
-		
 	}
 	
 	public void listarProfessores(){
-		int z=arrayProfessores.size();
-		for(int x=0;x<z;x++){
-			System.out.println(arrayProfessores.get(x).codigo);
-			System.out.println(arrayProfessores.get(x).nome);
-			System.out.println(arrayProfessores.get(x).cpf);
-			System.out.println(arrayProfessores.get(x).telefone);
-			System.out.println(arrayProfessores.get(x).email);
+		for (ManterProfessor manterProfessor : arrayProfessores) {
+			System.out.println("|DADOS DO PROFESSOR "+manterProfessor.nome+" ------------------------------");
+			System.out.println("|CÓDIGO   : "+manterProfessor.codigo);
+			System.out.println("|NOME     : "+manterProfessor.nome);
+			System.out.println("|CPF      : "+manterProfessor.cpf);
+			System.out.println("|TELEFONE : "+manterProfessor.telefone);
+			System.out.println("|EMAIL    : "+manterProfessor.email);
+			System.out.println("|--------------------------------------------------------|");
 		}
-		
 	}
+	
+	public void alterarProfessores(){
+		System.out.println("Digite o código do professor que deseja alterar");
+	}
+		
+		
 }
