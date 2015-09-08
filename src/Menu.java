@@ -56,12 +56,11 @@ public class Menu {
 				}else{
 					msg.mensagemPopUp("O código informado já existe!");
 				}
-				
 				break;
 			}
 			//alter services
 			case 2:{
-				System.out.println("Digite o código do evento que deseja alterar:");
+				System.out.println("Digite o código do serviço que deseja alterar:");
 				int cDescAlterar = in.nextInt();
 				System.out.println("Digite o novo código:");
 				int cDescNovo = in.nextInt();
@@ -119,6 +118,13 @@ public class Menu {
 				break;
 			}
 			case 2:{
+				System.out.println("Digite o código do professor que deseja alterar");
+				int cProfAlterar = in.nextInt();
+				System.out.println("Digite o nome que deseja que substitua o do codigo x !");
+				String nProfAlterar = in.nextLine();
+				System.out.println("Digite o novo cpf: ");
+				String cpfProfAltear = in.nextLine();
+				System.out.println("");
 				
 			}
 			case 3:{
