@@ -13,14 +13,14 @@ ManterTurmas
 	
 ManterClientes
 	String  nome;
-	Int 	cpf;
-	String 	telefone;
-	String 	email;
-		private String 	endereço;
-		private Int 	nascimento;
-		private Char 	sexo;
-		private String 	estadoCivil;
-		private Char	situacao;
+			Int 	cpf;
+			String 	telefone;
+			String 	email;
+	private String 	endereço;
+	private Int 	nascimento;
+	private Char 	sexo;
+	private String 	estadoCivil;
+	private Char	situacao;
 
 ManterProfessores Extends ManterClientes
 	String  nome;

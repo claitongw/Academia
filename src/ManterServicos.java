@@ -29,8 +29,8 @@ public class ManterServicos {
 		if(cont==0)
 			msg.mensagemPopUp("O código informado não existe!");
 	}
-	//------------------------------------------------------------------------------------
-	public void consultarServicos(int cDescConsultar){//CONSULTA POR CÓDIGO DO SERVIÇO
+	//--------------------------------------------------CONSULTA POR CÓDIGO DO SERVIÇO
+	public void consultarServicos(int cDescConsultar){
 		int cont2=1;
 		for(int x=0;arrayServicos[x]!=null;x++){
 			if(arrayServicos[x].codDescricao==cDescConsultar){
@@ -43,8 +43,8 @@ public class ManterServicos {
 		if(cont2>1)
 		msg.mensagemPopUp("O Código informado não existe!");
 	}
-	//------------------------------------------------------------------------------------
-	public void consultarServicos(String nDescConsultar){//CONSULTA POR NOME DO SERVIÇO
+	//----------------------------------------------------CONSULTA POR NOME DO SERVIÇO
+	public void consultarServicos(String nDescConsultar){
 		for(int x=0;arrayServicos[x]!=null;x++){
 			if(arrayServicos[x].nomeDescricao.equals(nDescConsultar)){
 				System.out.println(arrayServicos[x].codDescricao+" | "+arrayServicos[x].nomeDescricao);

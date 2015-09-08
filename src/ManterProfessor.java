@@ -21,19 +21,27 @@ import java.util.ArrayList;
 	}
 	
 	public void listarProfessores(){
-		for (ManterProfessor manterProfessor : arrayProfessores) {
-			System.out.println("|DADOS DO PROFESSOR "+manterProfessor.nome+" ------------------------------");
-			System.out.println("|CÓDIGO   : "+manterProfessor.codigo);
-			System.out.println("|NOME     : "+manterProfessor.nome);
-			System.out.println("|CPF      : "+manterProfessor.cpf);
-			System.out.println("|TELEFONE : "+manterProfessor.telefone);
-			System.out.println("|EMAIL    : "+manterProfessor.email);
+		for (ManterProfessor arrayProf : arrayProfessores) {
+			System.out.println("|DADOS DO PROFESSOR "+arrayProf.nome+" ------------------------------");
+			System.out.println("|CÓDIGO   : "+arrayProf.codigo);
+			System.out.println("|NOME     : "+arrayProf.nome);
+			System.out.println("|CPF      : "+arrayProf.cpf);
+			System.out.println("|TELEFONE : "+arrayProf.telefone);
+			System.out.println("|EMAIL    : "+arrayProf.email);
 			System.out.println("|--------------------------------------------------------|");
 		}
 	}
 	
-	public void alterarProfessores(){
-		
+	public void alterarProfessores(int cProfAlterar, int cProfNovo, String nProfNovo, String nProfCPF, String nProfTelefone, String nProfEmail){
+		for (ManterProfessor arrayProf : arrayProfessores) {
+			if(arrayProf.codigo==cProfAlterar){
+				arrayProf.codigo=cProfNovo;
+				arrayProf.nome=nProfNovo;
+				arrayProf.cpf=nProfCPF;
+				arrayProf.telefone=nProfTelefone;
+				arrayProf.email=nProfEmail;
+			}
+		}
 	}
 }
 

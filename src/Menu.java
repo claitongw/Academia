@@ -118,14 +118,20 @@ public class Menu {
 				break;
 			}
 			case 2:{
-				System.out.println("Digite o código do professor que deseja alterar");
+				System.out.println("Digite o código do professor que deseja alterar: ");
 				int cProfAlterar = in.nextInt();
-				System.out.println("Digite o nome que deseja que substitua o do codigo x !");
-				String nProfAlterar = in.nextLine();
-				System.out.println("Digite o novo cpf: ");
-				String cpfProfAltear = in.nextLine();
-				System.out.println("");
+				System.out.println("Digite o novo CÓDIGO desejado: ");
+				int cProfNovo = in.nextInt();
+				System.out.println("Digite o novo NOME: ");
+				String nProfNovo = in2.nextLine();
+				System.out.println("Digite o novo CPF: ");
+				String nProfCPF = in.nextLine();
+				System.out.println("Digite o novo TELEFONE: ");
+				String nProfTelefone = in.nextLine();
+				System.out.println("Digite o novo EMAIL: ");
+				String nProfEmail = in.nextLine();
 				
+				mProfessor.alterarProfessores(cProfAlterar, cProfNovo, nProfNovo, nProfCPF, nProfTelefone, nProfEmail);
 			}
 			case 3:{
 				
