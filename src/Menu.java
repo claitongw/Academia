@@ -116,6 +116,20 @@ public class Menu {
 		switch(esc){
 			case 1:{
 				mProfessor.incluirProfessores(1, "Claiton", "4456", "56546", "clasda");
+				break;
+			}
+			case 2:{
+				
+			}
+			case 3:{
+				
+			}
+			case 4:{
+				mProfessor.listarProfessores();
+				break;
+			}
+			case 5:{
+				
 			}
 		}
 	}
