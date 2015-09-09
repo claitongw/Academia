@@ -15,9 +15,22 @@ import java.util.ArrayList;
 		adiciona.nome=nome;
 		adiciona.cpf=cpf;
 		adiciona.telefone=telefone;
-		adiciona.email=email;	
-		arrayProfessores.add(adiciona);
-		msg.mensagemPopUp("Professor "+adiciona.nome+" cadastrado com sucesso!");
+		adiciona.email=email;
+		
+		int cont=0;
+		for (ManterProfessor arrayProf : arrayProfessores) {
+			if(arrayProf.codigo==codigo){
+				msg.mensagemPopUp("Já existe!");
+			}else{
+				cont=cont+1;
+			}
+		}
+		if(cont!=0){
+			arrayProfessores.add(adiciona);
+			msg.mensagemPopUp("Professor "+adiciona.nome+" cadastrado com sucesso!");	
+		}
+			
+		
 	}
 	
 	public void listarProfessores(){
@@ -32,7 +45,7 @@ import java.util.ArrayList;
 		}
 	}
 	
-	public void alterarProfessores(int cProfAlterar, int cProfNovo, String nProfNovo, String nProfCPF, String nProfTelefone, String nProfEmail){
+	public void alterarProfessores(int cProfAlterar, int cProfNovo, String nProfNovo, String nProfCPF, String nProfTelefone, String nProfEmail){	
 		for (ManterProfessor arrayProf : arrayProfessores) {
 			if(arrayProf.codigo==cProfAlterar){
 				arrayProf.codigo=cProfNovo;
@@ -43,6 +56,8 @@ import java.util.ArrayList;
 			}
 		}
 	}
+	
+
 }
 
 	
