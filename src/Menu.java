@@ -32,6 +32,8 @@ public class Menu {
 	
 	}
 	
+	//SERVIÇOS-------------------------------------------------------------------------------------------------------------------------------------------------
+	
 	void mostrarMenuServicos(){
 		System.out.println("Menu\\Serviços | Selecione uma opção: ");
 		System.out.println("1 = Incluir:");
@@ -102,6 +104,9 @@ public class Menu {
 		}
 		
 	}
+	
+	//PROFESSORES-------------------------------------------------------------------------------------------------------------------------------------------------
+	
 	void mostrarMenuProfessores(){
 		System.out.println("Menu\\Professores | Selecione uma opção: ");
 		System.out.println("1 = Incluir:");
@@ -115,6 +120,7 @@ public class Menu {
 		switch(esc){
 			case 1:{
 				mProfessor.incluirProfessores(1, "Claiton", "4456", "56546", "clasda");
+				mProfessor.incluirProfessores(2, "Alcione", "4456", "56546", "clasda");
 				break;
 			}
 			case 2:{
@@ -125,22 +131,30 @@ public class Menu {
 				System.out.println("Digite o novo NOME: ");
 				String nProfNovo = in2.nextLine();
 				System.out.println("Digite o novo CPF: ");
-				String nProfCPF = in.nextLine();
+				String nProfCPF = in2.nextLine();
 				System.out.println("Digite o novo TELEFONE: ");
-				String nProfTelefone = in.nextLine();
+				String nProfTelefone = in2.nextLine();
 				System.out.println("Digite o novo EMAIL: ");
-				String nProfEmail = in.nextLine();
+				String nProfEmail = in2.nextLine();
 				
 				mProfessor.alterarProfessores(cProfAlterar, cProfNovo, nProfNovo, nProfCPF, nProfTelefone, nProfEmail);
+				break;
 			}
 			case 3:{
-				
+				System.out.println("Digite o código do professor que deseja consultar: ");
+				int cProfConsultar = in.nextInt();
+				mProfessor.consultarProfessores(cProfConsultar);
+				break;
 			}
 			case 4:{
 				mProfessor.listarProfessores();
 				break;
 			}
 			case 5:{
+				System.out.println("Digite o código do professor que deseja excluir: ");
+				int cProfExcluir = in.nextInt();
+				mProfessor.excluirProfessores(cProfExcluir);
+				break;
 				
 			}
 		}
