@@ -88,17 +88,13 @@ import java.util.ArrayList;
 	}
 	
 	public void excluirProfessores(int cProfExcluir){
-		for(int x=0; x<=arrayProfessores.size();x++){
-			if()
-			
-		}
-		listarProfessores();
-	}
-		
-		/*for (ManterProfessor arrayProf : arrayProfessores) {
+		for (ManterProfessor arrayProf : arrayProfessores) {
 			if(arrayProf.codigo==cProfExcluir){
-				arrayProf.
+				arrayProfessores.remove(arrayProf);
+				msg.mensagemPopUp("removido");
+			return;
 			}
-		}*/
-		
+		}
+			msg.mensagemPopUp("O Código não existe!");
+	}	
 }

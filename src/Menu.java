@@ -20,16 +20,15 @@ public class Menu {
 	System.out.println("4 = Serviços:");
 	int esc = lerEscolha.nextInt();
 		
-	switch(esc){
-		case 4:{
-			mostrarMenuServicos();
-			break;
+		switch(esc){
+			case 4:{
+				mostrarMenuServicos();
+				break;
+			}
+			case 3:{
+				mostrarMenuProfessores();
+			}
 		}
-		case 3:{
-			mostrarMenuProfessores();
-		}
-	}
-	
 	}
 	
 	//SERVIÇOS-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -119,21 +118,40 @@ public class Menu {
 		
 		switch(esc){
 			case 1:{
-				mProfessor.incluirProfessores(1, "Claiton", "4456", "56546", "clasda");
-				mProfessor.incluirProfessores(2, "Alcione", "4456", "56546", "clasda");
+				System.out.println("Digite o CÓDIGO do professor: ");
+				int codProfIncluir = in.nextInt();
+				
+				System.out.println("Digite o NOME do professor: ");
+				String nomeProfInluir = in2.nextLine();
+				
+				System.out.println("Digite o CPF do professor: ");
+				String cpfProfIncluir = in2.nextLine();
+								
+				System.out.println("Digite o TELEFONE do professor: ");
+				String telProfIncluir = in2.nextLine();
+				
+				System.out.println("Digite o EMAIL do professor: ");
+				String emailProfIncluir = in2.nextLine();
+				
+				mProfessor.incluirProfessores(codProfIncluir, nomeProfInluir, cpfProfIncluir, telProfIncluir, emailProfIncluir);
 				break;
 			}
 			case 2:{
 				System.out.println("Digite o código do professor que deseja alterar: ");
 				int cProfAlterar = in.nextInt();
+				
 				System.out.println("Digite o novo CÓDIGO desejado: ");
 				int cProfNovo = in.nextInt();
+				
 				System.out.println("Digite o novo NOME: ");
 				String nProfNovo = in2.nextLine();
+				
 				System.out.println("Digite o novo CPF: ");
 				String nProfCPF = in2.nextLine();
+				
 				System.out.println("Digite o novo TELEFONE: ");
 				String nProfTelefone = in2.nextLine();
+				
 				System.out.println("Digite o novo EMAIL: ");
 				String nProfEmail = in2.nextLine();
 				
@@ -143,6 +161,7 @@ public class Menu {
 			case 3:{
 				System.out.println("Digite o código do professor que deseja consultar: ");
 				int cProfConsultar = in.nextInt();
+				
 				mProfessor.consultarProfessores(cProfConsultar);
 				break;
 			}
@@ -153,6 +172,7 @@ public class Menu {
 			case 5:{
 				System.out.println("Digite o código do professor que deseja excluir: ");
 				int cProfExcluir = in.nextInt();
+				
 				mProfessor.excluirProfessores(cProfExcluir);
 				break;
 				
