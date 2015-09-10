@@ -1,8 +1,5 @@
 import java.awt.BorderLayout;
-import javax.swing.SwingConstants;
-
 import javax.swing.*;
-import java.awt.*;
 
 
 	public class Mensagens extends JFrame {
@@ -14,7 +11,6 @@ import java.awt.*;
 		JFrame J = new JFrame("Academia");
 		panel = new JPanel();
 		label = new JLabel(mensagem, SwingConstants.CENTER);
-		label.setForeground(Color.black);
 		J.add(label);
 		J.setSize(400,100);
         getContentPane().add(panel, BorderLayout.CENTER);

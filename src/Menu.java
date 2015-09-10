@@ -10,6 +10,7 @@ public class Menu {
 	
 	ManterServicos mServico = new ManterServicos();
 	ManterProfessor mProfessor = new ManterProfessor();
+	ManterClientes mCliente = new ManterClientes();
 	public static Mensagens msg = new Mensagens();
 	
 	void mostrarMenu(){
@@ -175,9 +176,100 @@ public class Menu {
 				
 				mProfessor.excluirProfessores(cProfExcluir);
 				break;
-				
 			}
 		}
 	}
+	//CLIENTES-------------------------------------------------------------------------------------------------------------------------------------------------
 	
+	//codigo, nome, cpf, telefone, email, endereco, estadoCivil, sexo, situacao, nascimento.
+	
+	void mostrarMenuClientes(){
+		System.out.println("Menu\\Clientes(Alunos) | Selecione uma opção: ");
+		System.out.println("1 = Incluir:");
+		System.out.println("2 = Alterar:");
+		System.out.println("3 = Consultar:");
+		System.out.println("4 = Listar:");
+		System.out.println("5 = Excluir:");
+		System.out.println("6 =Voltar:");
+		int esc = lerEscolha.nextInt();
+		
+		switch(esc){//
+			case 1:{
+				System.out.println("Digite o CÓDIGO do aluno: ");
+				int codClienteIncluir = in.nextInt();
+				mCliente.setCodigo(codClienteIncluir);
+				
+				System.out.println("Digite o NOME do aluno: ");
+				String nomeClienteInluir = in2.nextLine();
+				
+				System.out.println("Digite o CPF do aluno: ");
+				String cpfClienteIncluir = in2.nextLine();
+								
+				System.out.println("Digite o TELEFONE do aluno: ");
+				String telClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o EMAIL do aluno: ");
+				String emailClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o EMAIL do aluno: ");
+				String enderecoClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o EMAIL do aluno: ");
+				String estadoCivilClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o EMAIL do aluno: ");
+				String sexoClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o EMAIL do aluno: ");
+				String situacaoClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o EMAIL do aluno: ");
+				String nascClienteIncluir = in2.nextLine();
+				
+				mProfessor.incluirProfessores();
+				break;
+			}
+			case 2:{
+				System.out.println("Digite o código do professor que deseja alterar: ");
+				int cProfAlterar = in.nextInt();
+				
+				System.out.println("Digite o novo CÓDIGO desejado: ");
+				int cProfNovo = in.nextInt();
+				
+				System.out.println("Digite o novo NOME: ");
+				String nProfNovo = in2.nextLine();
+				
+				System.out.println("Digite o novo CPF: ");
+				String nProfCPF = in2.nextLine();
+				
+				System.out.println("Digite o novo TELEFONE: ");
+				String nProfTelefone = in2.nextLine();
+				
+				System.out.println("Digite o novo EMAIL: ");
+				String nProfEmail = in2.nextLine();
+				
+				mProfessor.alterarProfessores(cProfAlterar, cProfNovo, nProfNovo, nProfCPF, nProfTelefone, nProfEmail);
+				break;
+			}
+			case 3:{
+				System.out.println("Digite o código do professor que deseja consultar: ");
+				int cProfConsultar = in.nextInt();
+				
+				mProfessor.consultarProfessores(cProfConsultar);
+				break;
+			}
+			case 4:{
+				mProfessor.listarProfessores();
+				break;
+			}
+			case 5:{
+				System.out.println("Digite o código do professor que deseja excluir: ");
+				int cProfExcluir = in.nextInt();
+				
+				mProfessor.excluirProfessores(cProfExcluir);
+				break;
+			}
+		}
+		
+	}
 }
