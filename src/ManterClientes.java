@@ -6,87 +6,124 @@ import java.util.ArrayList;
  *
  */
 public class ManterClientes {
-	private int 	codigo;
-	private int 	nascimento;
-	
-	private char 	sexo;
-	private char 	situacao;
+	public int 	 	codigo;
 		
-	private String  nome;
-	private String 	cpf;
-	private String 	telefone;
-	private String 	email;
-	private String 	endereço;
-	private String 	estadoCivil;
+	public char 	sexo;
+	public char		situacao;
+	
+	public String 	nascimento;
+	public String   nome;
+	public String 	cpf;
+	public String 	telefone;
+	public String 	email;
+	public String 	endereco;
+	public String 	estadoCivil;
 		
 	ArrayList<ManterClientes> arrayClientes = new ArrayList<ManterClientes>();//Incluir, alterar, excluir, consultar, LISTAR
 	
 	//codigo, nome, cpf, telefone, email, endereco, estadoCivil, sexo, situacao, nascimento.
 	
-	public static Mensagens msg = new Mensagens();
+	public static Mensagens msg = new Mensagens();	
 	
-	public int getCodigo() {
-		return codigo;
-	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-	public int getNascimento() {
-		return nascimento;
-	}
-	public void setNascimento(int nascimento) {
-		this.nascimento = nascimento;
-	}
-	public char getSexo() {
-		return sexo;
-	}
-	public void setSexo(char sexo) {
-		this.sexo = sexo;
-	}
-	public char getSituacao() {
-		return situacao;
-	}
-	public void setSituacao(char situacao) {
-		this.situacao = situacao;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getEndereço() {
-		return endereço;
-	}
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
-	}
-	public String getEstadoCivil() {
-		return estadoCivil;
-	}
-	public void setEstadoCivil(String estadoCivil) {
-		this.estadoCivil = estadoCivil;
+	public void incluirClientes(int codigo, String nascimento, char sexo, char situacao, String nome, String cpf,
+								String telefone, String email, String endereco, String estadoCivil){
+	
+		ManterClientes adiciona = new ManterClientes();
+		
+		adiciona.codigo=codigo;
+		adiciona.nascimento=nascimento;
+		adiciona.sexo=sexo;
+		adiciona.situacao=situacao;
+		adiciona.nome=nome;
+		adiciona.cpf=cpf;
+		adiciona.telefone=telefone;
+		adiciona.email=email;
+		adiciona.endereco=endereco;
+		adiciona.estadoCivil=estadoCivil;
+		
+		int cont=0;
+		//verifica se é a primeira inclusão no array, se for, inclui direto.
+		if(arrayClientes.size()==0){
+			arrayClientes.add(adiciona);
+			msg.mensagemPopUp("Aluno "+adiciona.nome+" cadastrado com sucesso!");
+		}else{
+			//se não for a primeira testa se o código já existe, se não existe cont=1 e no final se cont==1 ele adiciona
+			for (ManterClientes arrayAluno : arrayClientes) {
+				if(arrayAluno.codigo==codigo){
+					msg.mensagemPopUp("O Código já existe!");
+				}else{
+					cont=1;
+				}
+			}
+			if(cont==1){
+				arrayClientes.add(adiciona);
+				msg.mensagemPopUp("Aluno "+adiciona.nome+" cadastrado com sucesso!");	
+			}
+		}
 	}
 	
+
+	public void alterarClientes(int codAlterar, int codigo, String nascimento, char sexo, char situacao, String nome, String cpf,
+			String telefone, String email, String endereco, String estadoCivil){	
+		for (ManterClientes arrayAluno : arrayClientes) {
+			if(arrayAluno.codigo==codAlterar){
+				arrayAluno.codigo=codigo;
+				arrayAluno.nome=nome;
+				arrayAluno.cpf=cpf;
+				arrayAluno.telefone=telefone;
+				arrayAluno.email=email;
+				arrayAluno.nascimento=nascimento;
+				arrayAluno.sexo=sexo;
+				arrayAluno.situacao=situacao;
+				arrayAluno.endereco=endereco;
+				arrayAluno.estadoCivil=estadoCivil;
+			}
+		}
+		listarProfessores();
+	}
 	
+	public void listarProfessores(){
+		for (ManterProfessor arrayProf : arrayProfessores) {
+			System.out.println("|DADOS DO PROFESSOR "+arrayProf.nome+" ------------------------------");
+			System.out.println("|CÓDIGO   : "+arrayProf.codigo);
+			System.out.println("|NOME     : "+arrayProf.nome);
+			System.out.println("|CPF      : "+arrayProf.cpf);
+			System.out.println("|TELEFONE : "+arrayProf.telefone);
+			System.out.println("|EMAIL    : "+arrayProf.email);
+			System.out.println("|--------------------------------------------------------|");
+		}
+	}
 	
+	public void consultarProfessores(int cProfConsultar){
+		int cont=0;
+		for (ManterProfessor arrayProf : arrayProfessores) {
+			if(arrayProf.codigo==cProfConsultar){
+				System.out.println("|DADOS DO PROFESSOR "+arrayProf.nome+" ------------------------------");
+				System.out.println("|CÓDIGO   : "+arrayProf.codigo);
+				System.out.println("|NOME     : "+arrayProf.nome);
+				System.out.println("|CPF      : "+arrayProf.cpf);
+				System.out.println("|TELEFONE : "+arrayProf.telefone);
+				System.out.println("|EMAIL    : "+arrayProf.email);
+				System.out.println("|--------------------------------------------------------|");
+			}else{
+				cont=cont+1;
+			}
+		}
+		
+		if(cont>0){
+			msg.mensagemPopUp("O Código não existe!");
+		}
+	}
 	
+	public void excluirProfessores(int cProfExcluir){
+		for (ManterProfessor arrayProf : arrayProfessores) {
+			if(arrayProf.codigo==cProfExcluir){
+				arrayProfessores.remove(arrayProf);
+				msg.mensagemPopUp("removido");
+			return;
+			}
+		}
+			msg.mensagemPopUp("O Código não existe!");
+	}	
+}
 }

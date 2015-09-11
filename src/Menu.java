@@ -22,12 +22,16 @@ public class Menu {
 	int esc = lerEscolha.nextInt();
 		
 		switch(esc){
-			case 4:{
-				mostrarMenuServicos();
+			case 2:{
+				mostrarMenuClientes();
 				break;
 			}
 			case 3:{
 				mostrarMenuProfessores();
+			}
+			case 4:{
+				mostrarMenuServicos();
+				break;
 			}
 		}
 	}
@@ -195,42 +199,43 @@ public class Menu {
 		
 		switch(esc){//
 			case 1:{
-				System.out.println("Digite o CÓDIGO do aluno: ");
-				int codClienteIncluir = in.nextInt();
-				mCliente.setCodigo(codClienteIncluir);
-				
-				System.out.println("Digite o NOME do aluno: ");
-				String nomeClienteInluir = in2.nextLine();
-				
-				System.out.println("Digite o CPF do aluno: ");
-				String cpfClienteIncluir = in2.nextLine();
+//				System.out.println("Digite o CÓDIGO do aluno: ");
+//				int codClienteIncluir = in.nextInt();
+//				
+//				System.out.println("Digite o NOME do aluno: ");
+//				String nomeClienteInluir = in2.nextLine();
+//				
+//				System.out.println("Digite o CPF do aluno: ");
+//				String cpfClienteIncluir = in2.nextLine();
+//								
+//				System.out.println("Digite o TELEFONE do aluno: ");
+//				String telClienteIncluir = in2.nextLine();
+//				
+//				System.out.println("Digite o EMAIL do aluno: ");
+//				String emailClienteIncluir = in2.nextLine();
+//				
+//				System.out.println("Digite o ENDEREÇO do aluno: ");
+//				String enderecoClienteIncluir = in2.nextLine();
+//				
+//				System.out.println("Digite o ESTADO CIVIL do aluno: ");
+//				String estadoCivilClienteIncluir = in2.nextLine();
+//				
+//				System.out.println("Digite o SEXO do aluno: M/F");
+//				char sexoClienteIncluir = in2.nextLine().charAt(0);
+//				
+//				System.out.println("Digite o SITUAÇÂO do aluno: A (ativo) | I (Inativo)");
+//				char situacaoClienteIncluir = in2.nextLine().charAt(0);
+//				
+//				System.out.println("Digite a DATA DE NASCIMENTO do aluno: ");
+//				String nascClienteIncluir = in2.nextLine();
 								
-				System.out.println("Digite o TELEFONE do aluno: ");
-				String telClienteIncluir = in2.nextLine();
-				
-				System.out.println("Digite o EMAIL do aluno: ");
-				String emailClienteIncluir = in2.nextLine();
-				
-				System.out.println("Digite o EMAIL do aluno: ");
-				String enderecoClienteIncluir = in2.nextLine();
-				
-				System.out.println("Digite o EMAIL do aluno: ");
-				String estadoCivilClienteIncluir = in2.nextLine();
-				
-				System.out.println("Digite o EMAIL do aluno: ");
-				String sexoClienteIncluir = in2.nextLine();
-				
-				System.out.println("Digite o EMAIL do aluno: ");
-				String situacaoClienteIncluir = in2.nextLine();
-				
-				System.out.println("Digite o EMAIL do aluno: ");
-				String nascClienteIncluir = in2.nextLine();
-				
-				mProfessor.incluirProfessores();
+				//mCliente.incluirClientes(codClienteIncluir, codClienteIncluir, sexoClienteIncluir, situacaoClienteIncluir, nomeClienteInluir, cpfClienteIncluir, telClienteIncluir,
+					//	emailClienteIncluir, enderecoClienteIncluir, estadoCivilClienteIncluir);
+				mCliente.incluirClientes(1, "12/10/2011", 'M', 'A', "Claiton", "37623278987", "877786687687", "dhsudahs@djsaijdais.com.ui", "Rua da amoreira", "Solteiro");
 				break;
 			}
 			case 2:{
-				System.out.println("Digite o código do professor que deseja alterar: ");
+				System.out.println("Digite o código do ALUNO que deseja alterar: ");
 				int cProfAlterar = in.nextInt();
 				
 				System.out.println("Digite o novo CÓDIGO desejado: ");
@@ -247,6 +252,21 @@ public class Menu {
 				
 				System.out.println("Digite o novo EMAIL: ");
 				String nProfEmail = in2.nextLine();
+
+				System.out.println("Digite o ENDEREÇO do aluno: ");
+				String enderecoClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o ESTADO CIVIL do aluno: ");
+				String estadoCivilClienteIncluir = in2.nextLine();
+				
+				System.out.println("Digite o SEXO do aluno: M/F");
+				char sexoClienteIncluir = in2.nextLine().charAt(0);
+				
+				System.out.println("Digite o SITUAÇÂO do aluno: A (ativo) | I (Inativo)");
+				char situacaoClienteIncluir = in2.nextLine().charAt(0);
+				
+				System.out.println("Digite a DATA DE NASCIMENTO do aluno: ");
+				String nascClienteIncluir = in2.nextLine();
 				
 				mProfessor.alterarProfessores(cProfAlterar, cProfNovo, nProfNovo, nProfCPF, nProfTelefone, nProfEmail);
 				break;
