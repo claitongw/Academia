@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 
 
-/**
- * @author Sanvitron
- *
- */
+
 public class ManterClientes {
 	public int 	 	codigo;
 		
@@ -79,17 +76,22 @@ public class ManterClientes {
 				arrayAluno.estadoCivil=estadoCivil;
 			}
 		}
-		listarProfessores();
+		listarClientes();
 	}
 	
-	public void listarProfessores(){
-		for (ManterProfessor arrayProf : arrayProfessores) {
-			System.out.println("|DADOS DO PROFESSOR "+arrayProf.nome+" ------------------------------");
-			System.out.println("|CÓDIGO   : "+arrayProf.codigo);
-			System.out.println("|NOME     : "+arrayProf.nome);
-			System.out.println("|CPF      : "+arrayProf.cpf);
-			System.out.println("|TELEFONE : "+arrayProf.telefone);
-			System.out.println("|EMAIL    : "+arrayProf.email);
+	public void listarClientes(){
+		for (ManterClientes arrayAluno : arrayClientes) {
+			System.out.println("|DADOS DO CLIENTE "+arrayAluno.nome+" ------------------------------");
+			System.out.println("|CÓDIGO     : "+arrayAluno.codigo);
+			System.out.println("|NOME       : "+arrayAluno.nome);
+			System.out.println("|CPF        : "+arrayAluno.cpf);
+			System.out.println("|TELEFONE   : "+arrayAluno.telefone);
+			System.out.println("|EMAIL      : "+arrayAluno.email);
+			System.out.println("|NASCIMENTO : "+arrayAluno.nascimento);
+			System.out.println("|SEXO 		: "+arrayAluno.sexo);
+			System.out.println("|SITUACAO 	: "+arrayAluno.situacao);
+			System.out.println("|ENDEREÇO 	: "+arrayAluno.endereco);
+			System.out.println("|Est. Civil : "+arrayAluno.estadoCivil);
 			System.out.println("|--------------------------------------------------------|");
 		}
 	}
@@ -126,4 +128,4 @@ public class ManterClientes {
 			msg.mensagemPopUp("O Código não existe!");
 	}	
 }
-}
+
