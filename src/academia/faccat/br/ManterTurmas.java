@@ -1,3 +1,6 @@
+package academia.faccat.br;
+
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -8,6 +11,8 @@ public class ManterTurmas {
 	public int codHorario;
 	public int codAluno;
 	public int diaSemanaValue;
+	
+	Menu objMenu;
 
 	private String modalidade;
 	public String diaSemana;
@@ -82,12 +87,19 @@ public class ManterTurmas {
 		System.out.println("||===============================================||");
 	}
 	
-	void listarTurmas(){
+	
+	
+	void listarTurmas(){//CONTINUAR AQUII
 		for (ManterTurmas arrayTurmas : arrayTurmas) {
-				System.out.println("Cód. Turma "+ arrayTurmas.codigo);
-				if(arrayTurmas.codProfessor==mProfessor)
-				System.out.println(arrayTurmas.codProfessor);
-				System.out.println(arrayTurmas.codModalidade);
+				System.out.println("Cód. Turma :"+ arrayTurmas.codigo);
+				if(arrayTurmas.codProfessor==objMenu.mProfessor.codigo){
+					System.out.println("Professor :"+objMenu.mProfessor.codigo+" | "+objMenu.mProfessor.nome);
+				}
+				if(arrayTurmas.codModalidade==){
+					System.out.println("Serviços :"+objMenu.mServico.codDescricao+" | "+objMenu.mServico.nomeDescricao);
+				}
+				
+				objetos.mServico.
 				System.out.println(arrayTurmas.codHorario);
 				System.out.println(arrayTurmas.diaSemana);
 		}

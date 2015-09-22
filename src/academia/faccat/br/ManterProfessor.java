@@ -1,3 +1,5 @@
+package academia.faccat.br;
+
 import java.util.ArrayList;
 
 	public class ManterProfessor{

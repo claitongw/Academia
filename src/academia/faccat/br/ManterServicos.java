@@ -1,3 +1,5 @@
+package academia.faccat.br;
+
 public class ManterServicos {
 	public int codDescricao;
 	public String nomeDescricao;

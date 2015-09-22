@@ -1,3 +1,5 @@
+package academia.faccat.br;
+
 import java.awt.BorderLayout;
 import javax.swing.*;
 

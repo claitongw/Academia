@@ -1,7 +1,9 @@
 /*
  * NESTA CLASSE MOSTRAMOS AS OPÇÕES DOS MENUS PARA O USUÁRIO E FAZEMOS AS CHAMADAS PARA OS MÉTODOS.
  */
-import java.util.Formatter;
+package academia.faccat.br;
+
+//import java.util.Formatter;
 import java.util.Scanner;
 import java.time.LocalDate;
 
@@ -11,10 +13,10 @@ public class Menu {
 	Scanner in = new Scanner(System.in);
 	Scanner in2 = new Scanner(System.in);
 
-	ManterServicos mServico = new ManterServicos();
-	ManterProfessor mProfessor = new ManterProfessor();
-	ManterClientes mCliente = new ManterClientes();
-	ManterTurmas mTurma = new ManterTurmas();
+	public static ManterServicos mServico = new ManterServicos();
+	public static ManterProfessor mProfessor = new ManterProfessor();
+	public static ManterClientes mCliente = new ManterClientes();
+	public static ManterTurmas mTurma = new ManterTurmas();
 	public static Mensagens msg = new Mensagens();
 
 	void mostrarMenu() {
