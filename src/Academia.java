@@ -4,6 +4,7 @@ public class Academia {
 
 	public static void main(String[] args) {
 		Scanner ler=new Scanner(System.in);
+
 		Menu tela = new Menu();
 		int continuar=1;
 		while(continuar==1){

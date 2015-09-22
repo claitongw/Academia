@@ -1,13 +1,11 @@
 import java.util.ArrayList;
 
 
-
 public class ManterClientes {
 	public int 	 	codigo;
 		
-	public char 	sexo;
-	public char		situacao;
-	
+	public String 	sexo;
+	public String	situacao;
 	public String 	nascimento;
 	public String   nome;
 	public String 	cpf;
@@ -22,7 +20,7 @@ public class ManterClientes {
 	
 	public static Mensagens msg = new Mensagens();	
 	
-	public void incluirClientes(int codigo, String nascimento, char sexo, char situacao, String nome, String cpf,
+	public void incluirClientes(int codigo, String nascimento, String sexo, String situacao, String nome, String cpf,
 								String telefone, String email, String endereco, String estadoCivil){
 	
 		ManterClientes adiciona = new ManterClientes();
@@ -60,7 +58,7 @@ public class ManterClientes {
 	}
 	
 
-	public void alterarClientes(int codAlterar, int codigo, String nascimento, char sexo, char situacao, String nome, String cpf,
+	public void alterarClientes(int codAlterar, int codigo, String nascimento, String sexo, String situacao, String nome, String cpf,
 			String telefone, String email, String endereco, String estadoCivil){	
 		for (ManterClientes arrayAluno : arrayClientes) {
 			if(arrayAluno.codigo==codAlterar){
@@ -88,24 +86,32 @@ public class ManterClientes {
 			System.out.println("|TELEFONE   : "+arrayAluno.telefone);
 			System.out.println("|EMAIL      : "+arrayAluno.email);
 			System.out.println("|NASCIMENTO : "+arrayAluno.nascimento);
-			System.out.println("|SEXO 		: "+arrayAluno.sexo);
-			System.out.println("|SITUACAO 	: "+arrayAluno.situacao);
-			System.out.println("|ENDEREÇO 	: "+arrayAluno.endereco);
+			System.out.println("|TELEFONE   : "+arrayAluno.sexo);
+			System.out.println("|EMAIL      : "+arrayAluno.situacao);
+			System.out.println("|NASCIMENTO : "+arrayAluno.endereco);
+//			System.out.println("|SEXO		: "+arrayAluno.sexo);
+//			System.out.println("|SITUACAO	: "+arrayAluno.situacao);
+//			System.out.println("|ENDEREÇO	: "+arrayAluno.endereco);
 			System.out.println("|Est. Civil : "+arrayAluno.estadoCivil);
 			System.out.println("|--------------------------------------------------------|");
 		}
 	}
 	
-	public void consultarProfessores(int cProfConsultar){
+	public void consultarClientes(int cClienteConsultar){
 		int cont=0;
-		for (ManterProfessor arrayProf : arrayProfessores) {
-			if(arrayProf.codigo==cProfConsultar){
-				System.out.println("|DADOS DO PROFESSOR "+arrayProf.nome+" ------------------------------");
-				System.out.println("|CÓDIGO   : "+arrayProf.codigo);
-				System.out.println("|NOME     : "+arrayProf.nome);
-				System.out.println("|CPF      : "+arrayProf.cpf);
-				System.out.println("|TELEFONE : "+arrayProf.telefone);
-				System.out.println("|EMAIL    : "+arrayProf.email);
+		for (ManterClientes arrayAluno : arrayClientes) {
+			if(arrayAluno.codigo==cClienteConsultar){
+				System.out.println("|DADOS DO CLIENTE "+arrayAluno.nome+" ------------------------------");
+				System.out.println("|CÓDIGO     : "+arrayAluno.codigo);
+				System.out.println("|NOME       : "+arrayAluno.nome);
+				System.out.println("|CPF        : "+arrayAluno.cpf);
+				System.out.println("|TELEFONE   : "+arrayAluno.telefone);
+				System.out.println("|EMAIL      : "+arrayAluno.email);
+				System.out.println("|NASCIMENTO : "+arrayAluno.nascimento);
+				System.out.println("|SEXO 		: "+arrayAluno.sexo);
+				System.out.println("|SITUACAO 	: "+arrayAluno.situacao);
+				System.out.println("|ENDEREÇO 	: "+arrayAluno.endereco);
+				System.out.println("|Est. Civil : "+arrayAluno.estadoCivil);
 				System.out.println("|--------------------------------------------------------|");
 			}else{
 				cont=cont+1;
@@ -117,10 +123,10 @@ public class ManterClientes {
 		}
 	}
 	
-	public void excluirProfessores(int cProfExcluir){
-		for (ManterProfessor arrayProf : arrayProfessores) {
-			if(arrayProf.codigo==cProfExcluir){
-				arrayProfessores.remove(arrayProf);
+	public void excluirClientes(int cClienteExcluir){
+		for (ManterClientes arrayAluno : arrayClientes) {
+			if(arrayAluno.codigo==cClienteExcluir){
+				arrayClientes.remove(arrayAluno);
 				msg.mensagemPopUp("removido");
 			return;
 			}
