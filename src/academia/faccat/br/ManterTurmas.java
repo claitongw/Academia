@@ -1,10 +1,13 @@
 package academia.faccat.br;
 
-//import academia.faccat.br.Menu;
-import java.time.LocalDate;
+import academia.faccat.br.Menu;
+//import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ManterTurmas extends Menu{
+public class ManterTurmas{
+	
+	private Menu menu;
+	
 	public int codigo;
 	public int codProfessor;
 	public int codModalidade;
@@ -12,7 +15,7 @@ public class ManterTurmas extends Menu{
 	public int codAluno;
 	public int diaSemanaValue;
 	
-	ManterProfessor professor;
+	
 	//Menu objMenu;
 
 	public String diaSemana;
@@ -26,7 +29,7 @@ public class ManterTurmas extends Menu{
 
 	Mensagens msg = new Mensagens();
 
-	void incluirTurma(int codigo, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana, ManterProfessor professor) {
+	void incluirTurma(int codigo, int  codProfessor, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana) {
 		ManterTurmas adiciona = new ManterTurmas();
 
 		adiciona.codigo = codigo;
@@ -35,7 +38,7 @@ public class ManterTurmas extends Menu{
 		adiciona.codHorario = codHorario;
 		adiciona.diaSemana = diaSemana;
 		adiciona.diaSemanaValue = diaSemanaValue;
-		adiciona.professor=professor;
+		//adiciona.professor=professor;
 		adiciona.arrayNumAlunos = null;
 
 		int cont = 0;
@@ -87,15 +90,17 @@ public class ManterTurmas extends Menu{
 		System.out.println("||      7        ||      21:00-22:00             ||");
 		System.out.println("||===============================================||");
 	}
-	
+	void teste(){
+		System.out.println(menu.mProfessor.arrayProfessores.get(0));
+	}
 	
 	
 	void listarTurmas(){     //CONTINUAR AQUII
 		for (ManterTurmas arrayTurma : arrayTurmas) {
 				System.out.println("Cód. Turma :"+arrayTurma.codigo);
-				if(arrayTurma.codProfessor==professor.codigo){
-					System.out.println("Professor :"+professor.nome);
-				}
+//				if(mTurma.codProfessor==mProfessor.codigo){
+//					System.out.println("Professor :"+mProfessor.nome);
+//				}
 				
 				System.out.println(arrayTurma.codHorario);
 				System.out.println(arrayTurma.diaSemana);

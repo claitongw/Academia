@@ -9,9 +9,9 @@ import java.time.LocalDate;
 
 public class Menu {
 
-	Scanner lerEscolha = new Scanner(System.in);
-	Scanner in = new Scanner(System.in);
-	Scanner in2 = new Scanner(System.in);
+	private Scanner lerEscolha = new Scanner(System.in);
+	private Scanner in = new Scanner(System.in);
+	private Scanner in2 = new Scanner(System.in);
 
 	public ManterServicos mServico = new ManterServicos();
 	public ManterProfessor mProfessor = new ManterProfessor();
@@ -88,7 +88,7 @@ public class Menu {
 				System.out.println("A turma é sempre em "+diaSemana.getDayOfWeek().name().toUpperCase());
 				int diaSemanaValue = diaSemana.getDayOfWeek().getValue();
 				String dSemana = diaSemana.getDayOfWeek().name().toUpperCase();
-				mTurma.incluirTurma(codigo, codModalidade, codHorario, diaSemanaValue, dSemana, mProfessor.arrayProfessores.get(codProfessor));
+				mTurma.incluirTurma(codigo, codProfessor, codModalidade, codHorario, diaSemanaValue, dSemana);
 				break;
 			}
 			case 2:{
@@ -122,6 +122,10 @@ public class Menu {
 			}
 			case 3:{
 				mTurma.listarTurmas();
+				break;
+			}
+			case 4:{
+				mTurma.teste();
 				break;
 			}
 		}
