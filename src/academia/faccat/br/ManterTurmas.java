@@ -1,10 +1,10 @@
 package academia.faccat.br;
 
-
+//import academia.faccat.br.Menu;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class ManterTurmas {
+public class ManterTurmas extends Menu{
 	public int codigo;
 	public int codProfessor;
 	public int codModalidade;
@@ -12,9 +12,9 @@ public class ManterTurmas {
 	public int codAluno;
 	public int diaSemanaValue;
 	
-	Menu objMenu;
+	ManterProfessor professor;
+	//Menu objMenu;
 
-	private String modalidade;
 	public String diaSemana;
 	public String horario;
 
@@ -26,7 +26,7 @@ public class ManterTurmas {
 
 	Mensagens msg = new Mensagens();
 
-	void incluirTurma(int codigo, int codProfessor, int codModalidade,	int codHorario, int diaSemanaValue, String diaSemana) {
+	void incluirTurma(int codigo, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana, ManterProfessor professor) {
 		ManterTurmas adiciona = new ManterTurmas();
 
 		adiciona.codigo = codigo;
@@ -35,6 +35,7 @@ public class ManterTurmas {
 		adiciona.codHorario = codHorario;
 		adiciona.diaSemana = diaSemana;
 		adiciona.diaSemanaValue = diaSemanaValue;
+		adiciona.professor=professor;
 		adiciona.arrayNumAlunos = null;
 
 		int cont = 0;
@@ -89,19 +90,15 @@ public class ManterTurmas {
 	
 	
 	
-	void listarTurmas(){//CONTINUAR AQUII
-		for (ManterTurmas arrayTurmas : arrayTurmas) {
-				System.out.println("Cód. Turma :"+ arrayTurmas.codigo);
-				if(arrayTurmas.codProfessor==objMenu.mProfessor.codigo){
-					System.out.println("Professor :"+objMenu.mProfessor.codigo+" | "+objMenu.mProfessor.nome);
-				}
-				if(arrayTurmas.codModalidade==){
-					System.out.println("Serviços :"+objMenu.mServico.codDescricao+" | "+objMenu.mServico.nomeDescricao);
+	void listarTurmas(){     //CONTINUAR AQUII
+		for (ManterTurmas arrayTurma : arrayTurmas) {
+				System.out.println("Cód. Turma :"+arrayTurma.codigo);
+				if(arrayTurma.codProfessor==professor.codigo){
+					System.out.println("Professor :"+professor.nome);
 				}
 				
-				objetos.mServico.
-				System.out.println(arrayTurmas.codHorario);
-				System.out.println(arrayTurmas.diaSemana);
+				System.out.println(arrayTurma.codHorario);
+				System.out.println(arrayTurma.diaSemana);
 		}
 	}
 

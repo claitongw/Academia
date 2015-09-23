@@ -13,10 +13,10 @@ public class Menu {
 	Scanner in = new Scanner(System.in);
 	Scanner in2 = new Scanner(System.in);
 
-	public static ManterServicos mServico = new ManterServicos();
-	public static ManterProfessor mProfessor = new ManterProfessor();
-	public static ManterClientes mCliente = new ManterClientes();
-	public static ManterTurmas mTurma = new ManterTurmas();
+	public ManterServicos mServico = new ManterServicos();
+	public ManterProfessor mProfessor = new ManterProfessor();
+	public ManterClientes mCliente = new ManterClientes();
+	public ManterTurmas mTurma = new ManterTurmas();
 	public static Mensagens msg = new Mensagens();
 
 	void mostrarMenu() {
@@ -88,7 +88,7 @@ public class Menu {
 				System.out.println("A turma é sempre em "+diaSemana.getDayOfWeek().name().toUpperCase());
 				int diaSemanaValue = diaSemana.getDayOfWeek().getValue();
 				String dSemana = diaSemana.getDayOfWeek().name().toUpperCase();
-				mTurma.incluirTurma(codigo, codProfessor, codModalidade, codHorario, diaSemanaValue, dSemana);
+				mTurma.incluirTurma(codigo, codModalidade, codHorario, diaSemanaValue, dSemana, mProfessor.arrayProfessores.get(codProfessor));
 				break;
 			}
 			case 2:{
@@ -121,7 +121,8 @@ public class Menu {
 				break;
 			}
 			case 3:{
-				
+				mTurma.listarTurmas();
+				break;
 			}
 		}
 	}
