@@ -1,13 +1,13 @@
 package academia.faccat.br;
 
-import academia.faccat.br.Menu;
+//import academia.faccat.br.Menu;
 //import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ManterTurmas{
 	
-	private Menu menu;
-	
+	//private Menu menu;
+	public ManterProfessor professor;
 	public int codigo;
 	public int codProfessor;
 	public int codModalidade;
@@ -38,7 +38,7 @@ public class ManterTurmas{
 		adiciona.codHorario = codHorario;
 		adiciona.diaSemana = diaSemana;
 		adiciona.diaSemanaValue = diaSemanaValue;
-		//adiciona.professor=professor;
+		adiciona.professor=professor;
 		adiciona.arrayNumAlunos = null;
 
 		int cont = 0;
@@ -91,16 +91,19 @@ public class ManterTurmas{
 		System.out.println("||===============================================||");
 	}
 	void teste(){
-		System.out.println(menu.mProfessor.arrayProfessores.get(0));
+		
+		System.out.println(Academia.tela.mProfessor.arrayProfessores.get(0).nome);
 	}
 	
 	
 	void listarTurmas(){     //CONTINUAR AQUII
+		int x=0;
 		for (ManterTurmas arrayTurma : arrayTurmas) {
 				System.out.println("Cód. Turma :"+arrayTurma.codigo);
-//				if(mTurma.codProfessor==mProfessor.codigo){
-//					System.out.println("Professor :"+mProfessor.nome);
-//				}
+				x++;
+				if(arrayTurma.codProfessor==Academia.tela.mProfessor.arrayProfessores.get(x).codigo){
+					System.out.println("Professor :"+Academia.tela.mProfessor.arrayProfessores.get(x).nome);
+				}
 				
 				System.out.println(arrayTurma.codHorario);
 				System.out.println(arrayTurma.diaSemana);

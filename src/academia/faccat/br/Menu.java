@@ -52,7 +52,7 @@ public class Menu {
 	}
 
 	// TURMAS-------------------------------------------------------------------------------------------------------------------------------------------------
-	void mostrarMenuTurmas() {
+	public void mostrarMenuTurmas() {
 		System.out.println("Menu\\Turmas | Selecione uma opção: ");
 		System.out.println("1 = Incluir:");
 		System.out.println("2 = Alterar:");
@@ -88,7 +88,7 @@ public class Menu {
 				System.out.println("A turma é sempre em "+diaSemana.getDayOfWeek().name().toUpperCase());
 				int diaSemanaValue = diaSemana.getDayOfWeek().getValue();
 				String dSemana = diaSemana.getDayOfWeek().name().toUpperCase();
-				mTurma.incluirTurma(codigo, codProfessor, codModalidade, codHorario, diaSemanaValue, dSemana);
+				mTurma.incluirTurma(codigo, codProfessor, codModalidade, codHorario, diaSemanaValue, dSemana, mProfessor);
 				break;
 			}
 			case 2:{
@@ -227,23 +227,24 @@ public class Menu {
 
 		switch (esc) {
 		case 1: {
-			System.out.println("Digite o CÓDIGO do professor: ");
-			int codProfIncluir = in.nextInt();
-
-			System.out.println("Digite o NOME do professor: ");
-			String nomeProfInluir = in2.nextLine();
-
-			System.out.println("Digite o CPF do professor: ");
-			String cpfProfIncluir = in2.nextLine();
-
-			System.out.println("Digite o TELEFONE do professor: ");
-			String telProfIncluir = in2.nextLine();
-
-			System.out.println("Digite o EMAIL do professor: ");
-			String emailProfIncluir = in2.nextLine();
-
-			mProfessor.incluirProfessores(codProfIncluir, nomeProfInluir,
-					cpfProfIncluir, telProfIncluir, emailProfIncluir);
+//			System.out.println("Digite o CÓDIGO do professor: ");
+//			int codProfIncluir = in.nextInt();
+//
+//			System.out.println("Digite o NOME do professor: ");
+//			String nomeProfInluir = in2.nextLine();
+//
+//			System.out.println("Digite o CPF do professor: ");
+//			String cpfProfIncluir = in2.nextLine();
+//
+//			System.out.println("Digite o TELEFONE do professor: ");
+//			String telProfIncluir = in2.nextLine();
+//
+//			System.out.println("Digite o EMAIL do professor: ");
+//			String emailProfIncluir = in2.nextLine();
+//			
+//			
+			mProfessor.incluirProfessores(12, "Claiton", "99999999", "99999999", "dgyasdgahsdusa@hduashdua.com");
+//			mProfessor.incluirProfessores(codProfIncluir, nomeProfInluir, cpfProfIncluir, telProfIncluir, emailProfIncluir);
 			break;
 		}
 		case 2: {

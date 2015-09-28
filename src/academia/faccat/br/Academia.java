@@ -5,10 +5,12 @@ import java.util.*;
 
 public class Academia {
 
+	static Menu tela;
+	
 	public static void main(String[] args) {
 		Scanner ler=new Scanner(System.in);
 
-		Menu tela = new Menu();
+		tela = new Menu();
 		int continuar=1;
 		while(continuar==1){
 			tela.mostrarMenu();
