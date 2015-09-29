@@ -5,23 +5,19 @@ package academia.faccat.br;
 import java.util.ArrayList;
 
 public class ManterTurmas{
-	
-	//private Menu menu;
-	public ManterProfessor professor;
-	public int codigo;
-	public int codProfessor;
-	public int codModalidade;
-	public int codHorario;
-	public int codAluno;
-	public int diaSemanaValue;
-	
-	
-	//Menu objMenu;
 
+	protected int codigo;
+	protected int codProfessor;
+	protected int codModalidade;
+	protected int codHorario;
+	protected int codAluno;
+	protected static int qntAluno=0;
+	protected int diaSemanaValue;
+	
+	ManterProfessor prof;
+	
 	public String diaSemana;
 	public String horario;
-
-	ManterTurmas[] arrayNumAlunos = new ManterTurmas[5];
 
 	ArrayList<ManterTurmas> arrayTurmas = new ArrayList<ManterTurmas>();
 
@@ -29,8 +25,10 @@ public class ManterTurmas{
 
 	Mensagens msg = new Mensagens();
 
-	void incluirTurma(int codigo, int  codProfessor, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana) {
+	void incluirTurma(int codigo, int  codProfessor, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana, ManterProfessor professor) {
 		ManterTurmas adiciona = new ManterTurmas();
+		
+		qntAluno=qntAluno+1;
 
 		adiciona.codigo = codigo;
 		adiciona.codProfessor = codProfessor;
@@ -38,32 +36,43 @@ public class ManterTurmas{
 		adiciona.codHorario = codHorario;
 		adiciona.diaSemana = diaSemana;
 		adiciona.diaSemanaValue = diaSemanaValue;
-		adiciona.professor=professor;
-		adiciona.arrayNumAlunos = null;
-
+		adiciona.prof=professor;
+		//adiciona.arrayNumAlunos = null;
+	
 		int cont = 0;
 		// verifica se é a primeira inclusão no array, se for, inclui direto.
-		if (arrayTurmas.size() == 0) {
-			arrayTurmas.add(adiciona);
-			msg.mensagemPopUp("Turma " + adiciona.codigo
-					+ " cadastrado com sucesso!");
-		} else {
-			// se não for a primeira testa se o código já existe, se não existe
-			// cont=1 e no final se cont==1 ele adiciona
-			for (ManterTurmas arrayTurma : arrayTurmas) {
-				if (arrayTurma.codigo == codigo) {
-					msg.mensagemPopUp("O Código já existe!");
-				} else {
-					cont = 1;
+		//(qntAluno<5){
+			
+			if (arrayTurmas.size() == 0) {
+				arrayTurmas.add(adiciona);
+				msg.mensagemPopUp("Turma " + adiciona.codigo+ " cadastrado com sucesso!");
+			} 
+			
+			else {
+				
+				// se não for a primeira testa se o código já existe, se não existe
+				// cont=1 e no final se cont==1 ele adiciona
+				
+				for (ManterTurmas arrayTurma : arrayTurmas) {
+					if (arrayTurma.codigo == codigo) {
+						msg.mensagemPopUp("O Código já existe!");
+					} else {
+						cont = 1;
+					}
+				}
+				
+				if (cont == 1) {
+					arrayTurmas.add(adiciona);
+					msg.mensagemPopUp("Turma" + adiciona.codigo+ " cadastrada com sucesso!");
 				}
 			}
-			if (cont == 1) {
-				arrayTurmas.add(adiciona);
-				msg.mensagemPopUp("Turma" + adiciona.codigo
-						+ " cadastrada com sucesso!");
-			}
-		}
+			
+//		} else{
+//			msg.mensagemPopUp("Turma Cheia!");
+//		}
+			
 	}
+		
 
 	void alterarTurmas(int codAlterar, int codigo, int codProfessor, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana){
 		for (ManterTurmas arrayTurmas : arrayTurmas) {

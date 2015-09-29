@@ -61,6 +61,9 @@ public class Menu {
 		System.out.println("5 =Voltar:");
 		int esc = lerEscolha.nextInt();
 
+		
+		
+		ManterProfessor prof = new ManterProfessor();
 		switch (esc) {
 			case 1: {
 				System.out.println("Digite o codigo da turma: ");
@@ -77,6 +80,13 @@ public class Menu {
 				System.out.println("Digite o código do professor: ");
 				mProfessor.listarProfessores();
 				int codProfessor = in.nextInt();
+					for (ManterProfessor arrayProf : mProfessor.arrayProfessores) {
+						if(arrayProf.codigo==codProfessor){
+							prof=arrayProf;
+						}
+					}
+				
+				
 				System.out.println("===============================================");
 				System.out.println("Digite a nova data de incio da turma no seguinte formato DD/MM/YYYY - DIGITE O DIA E PRESSIONE ENTER, MÊS E ENTER, ANO E ENTER:");
 				int dayOfMonth = in.nextInt();
@@ -88,7 +98,8 @@ public class Menu {
 				System.out.println("A turma é sempre em "+diaSemana.getDayOfWeek().name().toUpperCase());
 				int diaSemanaValue = diaSemana.getDayOfWeek().getValue();
 				String dSemana = diaSemana.getDayOfWeek().name().toUpperCase();
-				mTurma.incluirTurma(codigo, codProfessor, codModalidade, codHorario, diaSemanaValue, dSemana, mProfessor);
+				mTurma.incluirTurma(codigo, codProfessor, codModalidade, codHorario, diaSemanaValue, dSemana, prof);
+				
 				break;
 			}
 			case 2:{
@@ -96,8 +107,7 @@ public class Menu {
 				int codAlterar = in.nextInt();
 				System.out.println("Digite o novo codigo da turma: ");
 				int codigo = in.nextInt();
-				System.out.println("===============================================");
-				System.out.println("Escolha a nova modalidade digitando o código dela:  ");
+				mServico.listarServicos();
 				System.out.println("1-Musculação | 2-Corrida | 3-Pilates | 4-Zumba ");
 				int codModalidade = in.nextInt();
 				System.out.println("===============================================");
