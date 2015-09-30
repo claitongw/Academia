@@ -14,7 +14,7 @@ public class ManterTurmas{
 	protected static int qntAluno=0;
 	protected int diaSemanaValue;
 	
-	ManterProfessor prof;
+	protected ManterProfessor prof;
 	
 	public String diaSemana;
 	public String horario;
@@ -41,8 +41,7 @@ public class ManterTurmas{
 	
 		int cont = 0;
 		// verifica se é a primeira inclusão no array, se for, inclui direto.
-		//(qntAluno<5){
-			
+
 			if (arrayTurmas.size() == 0) {
 				arrayTurmas.add(adiciona);
 				msg.mensagemPopUp("Turma " + adiciona.codigo+ " cadastrado com sucesso!");
@@ -66,12 +65,7 @@ public class ManterTurmas{
 					msg.mensagemPopUp("Turma" + adiciona.codigo+ " cadastrada com sucesso!");
 				}
 			}
-			
-//		} else{
-//			msg.mensagemPopUp("Turma Cheia!");
-//		}
-			
-	}
+		}
 		
 
 	void alterarTurmas(int codAlterar, int codigo, int codProfessor, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana){
@@ -95,36 +89,62 @@ public class ManterTurmas{
 		System.out.println("||      3        ||      15:00-16:00             ||");
 		System.out.println("||      4        ||      16:00-17:00             ||");
 		System.out.println("||      5        ||      17:00-18:00             ||");
-		System.out.println("||      6        ||      19:00-20:00             ||");
-		System.out.println("||      7        ||      21:00-22:00             ||");
+		System.out.println("||      6        ||      18:00-19:00             ||");
+		System.out.println("||      7        ||      19:00-20:00             ||");
 		System.out.println("||===============================================||");
 	}
 	void teste(){
-		
-		System.out.println(Academia.tela.mProfessor.arrayProfessores.get(0).nome);
+		int x=0;
+		System.out.println(Academia.tela.mProfessor.arrayProfessores.get(x).nome);
 	}
 	
 	
-	void listarTurmas(){     //CONTINUAR AQUII
+	void listarTurmas(){
 		int x=0;
+		int sh=0;
 		for (ManterTurmas arrayTurma : arrayTurmas) {
 				System.out.println("Cód. Turma :"+arrayTurma.codigo);
-				x++;
-				if(arrayTurma.codProfessor==Academia.tela.mProfessor.arrayProfessores.get(x).codigo){
+				
+				if(arrayTurmas.get(x).codProfessor==Academia.tela.mProfessor.arrayProfessores.get(x).codigo){
 					System.out.println("Professor :"+Academia.tela.mProfessor.arrayProfessores.get(x).nome);
 				}
-				
+								
+				switch(arrayTurma.codHorario){
+					case 1:{
+						System.out.println("Horário: 13:00-14:00 ");
+						break;
+					}
+					case 2:{
+						System.out.println("Horário: 14:00-15:00 ");
+						break;
+					}
+					case 3:{
+						System.out.println("Horário: 15:00-16:00 ");
+						break;
+					}
+					case 4:{
+						System.out.println("Horário: 16:00-17:00 ");
+						break;
+					}
+					case 5:{
+						System.out.println("Horário: 17:00-18:00 ");
+						break;
+					}
+					case 6:{
+						System.out.println("Horário: 18:00-19:00 ");
+						break;
+					}
+					case 7:{
+						System.out.println("Horário: 19:00-20:00 ");
+						break;
+					}
+					
+				}
+
 				System.out.println(arrayTurma.codHorario);
 				System.out.println(arrayTurma.diaSemana);
+				x++;
 		}
-	}
-
-	void incluirModalidade() {
-
-	}
-
-	void listarModalidade() {
-
 	}
 
 }
