@@ -61,8 +61,6 @@ public class Menu {
 		System.out.println("5 =Voltar:");
 		int esc = lerEscolha.nextInt();
 
-		
-		
 		ManterProfessor prof = new ManterProfessor();
 		switch (esc) {
 			case 1: {
@@ -85,21 +83,17 @@ public class Menu {
 							prof=arrayProf;
 						}
 					}
-				
-				
 				System.out.println("===============================================");
+				//Leonardo, aqui para digitar a data da turma tem que digitar o dia e dar enter, o mês e dar enter, ano e enter.
 				System.out.println("Digite a nova data de incio da turma no seguinte formato DD/MM/YYYY - DIGITE O DIA E PRESSIONE ENTER, MÊS E ENTER, ANO E ENTER:");
 				int dayOfMonth = in.nextInt();
-				//System.out.println("Digite o mês do ano :");
 				int month = in.nextInt();
-				//System.out.println("Digite o dia :");
 				int year = in.nextInt();
 				LocalDate diaSemana = LocalDate.of(year, month, dayOfMonth);
 				System.out.println("A turma é sempre em "+diaSemana.getDayOfWeek().name().toUpperCase());
 				int diaSemanaValue = diaSemana.getDayOfWeek().getValue();
 				String dSemana = diaSemana.getDayOfWeek().name().toUpperCase();
 				mTurma.incluirTurma(codigo, codProfessor, codModalidade, codHorario, diaSemanaValue, dSemana, prof);
-				
 				break;
 			}
 			case 2:{
@@ -134,11 +128,9 @@ public class Menu {
 				mTurma.listarTurmas();
 				break;
 			}
-			case 4:{
-				mTurma.teste();
-				break;
-			}
 		}
+		mostrarMenu();
+			
 	}
 
 	// SERVIÇOS-------------------------------------------------------------------------------------------------------------------------------------------------
@@ -154,7 +146,6 @@ public class Menu {
 		int esc = lerEscolha.nextInt();
 
 		switch (esc) {
-		// add new service
 		case 1: {
 			int validar;
 			System.out.println("Digite o código do Serviço:");
@@ -169,10 +160,8 @@ public class Menu {
 			}
 			break;
 		}
-		// alter services
 		case 2: {
-			System.out
-					.println("Digite o código do serviço que deseja alterar:");
+			System.out.println("Digite o código do serviço que deseja alterar:");
 			int cDescAlterar = in.nextInt();
 			System.out.println("Digite o novo código:");
 			int cDescNovo = in.nextInt();
@@ -181,33 +170,30 @@ public class Menu {
 			mServico.alterarServicos(cDescAlterar, cDescNovo, nDescNovo);
 			break;
 		}
-		// consult services
 		case 3: {
 			System.out
 					.println("Escolha o tipo de pesquisa: (1-Código | 2-Nome)");
 			esc = lerEscolha.nextInt();
 			if (esc == 1) {
-				System.out.println("Qual código deseja consultar:");// if code
+				System.out.println("Qual código deseja consultar:");
 				int cDescConsultar = in.nextInt();
 				mServico.consultarServicos(cDescConsultar);
 			} else {
 				if (esc == 2) {
 					System.out
-							.println("Qual o nome do serviço q deseja consultar?");// if
-																					// name
+							.println("Qual o nome do serviço q deseja consultar?");
+																					
 					String nDescConsultar = in2.nextLine();
 					mServico.consultarServicos(nDescConsultar);
 				}
 			}
 			break;
 		}
-		// show all services
 		case 4: {
 			System.out.println("Listando serviços cadastrados");
 			mServico.listarServicos();
 			break;
 		}
-		// delete services
 		case 5: {
 			System.out.println("Qual o codigo do serviço que deseja excluir:");
 			int cDescExcluir = in2.nextInt();
@@ -237,24 +223,24 @@ public class Menu {
 
 		switch (esc) {
 		case 1: {
-//			System.out.println("Digite o CÓDIGO do professor: ");
-//			int codProfIncluir = in.nextInt();
-//
-//			System.out.println("Digite o NOME do professor: ");
-//			String nomeProfInluir = in2.nextLine();
-//
-//			System.out.println("Digite o CPF do professor: ");
-//			String cpfProfIncluir = in2.nextLine();
-//
-//			System.out.println("Digite o TELEFONE do professor: ");
-//			String telProfIncluir = in2.nextLine();
-//
-//			System.out.println("Digite o EMAIL do professor: ");
-//			String emailProfIncluir = in2.nextLine();
-//			
-//			
-			mProfessor.incluirProfessores(12, "Claiton", "99999999", "99999999", "dgyasdgahsdusa@hduashdua.com");
-//			mProfessor.incluirProfessores(codProfIncluir, nomeProfInluir, cpfProfIncluir, telProfIncluir, emailProfIncluir);
+			System.out.println("Digite o CÓDIGO do professor: ");
+			int codProfIncluir = in.nextInt();
+
+			System.out.println("Digite o NOME do professor: ");
+			String nomeProfInluir = in2.nextLine();
+
+			System.out.println("Digite o CPF do professor: ");
+			String cpfProfIncluir = in2.nextLine();
+
+			System.out.println("Digite o TELEFONE do professor: ");
+			String telProfIncluir = in2.nextLine();
+
+			System.out.println("Digite o EMAIL do professor: ");
+			String emailProfIncluir = in2.nextLine();
+			
+			
+//			mProfessor.incluirProfessores(12, "Claiton", "99999999", "99999999", "dgyasdgahsdusa@hduashdua.com");
+			mProfessor.incluirProfessores(codProfIncluir, nomeProfInluir, cpfProfIncluir, telProfIncluir, emailProfIncluir);
 			break;
 		}
 		case 2: {
@@ -310,9 +296,6 @@ public class Menu {
 
 	// CLIENTES-------------------------------------------------------------------------------------------------------------------------------------------------
 
-	// codigo, nome, cpf, telefone, email, endereco, estadoCivil, sexo,
-	// situacao, nascimento.
-
 	void mostrarMenuClientes() {
 		System.out.println("Menu\\Clientes(Alunos) | Selecione uma opção: ");
 		System.out.println("1 = Incluir:");
@@ -356,17 +339,11 @@ public class Menu {
 			System.out.println("Digite a DATA DE NASCIMENTO do aluno: ");
 			String nascClienteIncluir = in2.nextLine();
 
-			// mCliente.incluirClientes(codClienteIncluir, nascClienteIncluir,
-			// sexo, situacao, nome, cpf, telefone, email, endereco,
-			// estadoCivil);
 			mCliente.incluirClientes(codClienteIncluir, nascClienteIncluir,
 					sexoClienteIncluir, situacaoClienteIncluir,
 					nomeClienteInluir, cpfClienteIncluir, telClienteIncluir,
 					emailClienteIncluir, enderecoClienteIncluir,
 					estadoCivilClienteIncluir);
-			// mCliente.incluirClientes(1, "12/10/2011", "M", "A", "Claiton",
-			// "37623278987", "877786687687", "dhsudahs@djsaijdais.com.ui",
-			// "Rua da amoreira", "Solteiro");
 			break;
 		}
 		case 2: {

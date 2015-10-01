@@ -28,7 +28,7 @@ public class ManterTurmas{
 	void incluirTurma(int codigo, int  codProfessor, int codModalidade, int codHorario, int diaSemanaValue, String diaSemana, ManterProfessor professor) {
 		ManterTurmas adiciona = new ManterTurmas();
 		
-		qntAluno=qntAluno+1;
+	//	qntAluno=qntAluno+1;
 
 		adiciona.codigo = codigo;
 		adiciona.codProfessor = codProfessor;
@@ -93,15 +93,10 @@ public class ManterTurmas{
 		System.out.println("||      7        ||      19:00-20:00             ||");
 		System.out.println("||===============================================||");
 	}
-	void teste(){
-		int x=0;
-		System.out.println(Academia.tela.mProfessor.arrayProfessores.get(x).nome);
-	}
-	
 	
 	void listarTurmas(){
 		int x=0;
-		int sh=0;
+		System.out.println("=============================================================================");
 		for (ManterTurmas arrayTurma : arrayTurmas) {
 				System.out.println("Cód. Turma :"+arrayTurma.codigo);
 				
@@ -140,9 +135,8 @@ public class ManterTurmas{
 					}
 					
 				}
-
-				System.out.println(arrayTurma.codHorario);
-				System.out.println(arrayTurma.diaSemana);
+				System.out.println("Dia da Semana"+arrayTurma.diaSemana);
+				System.out.println("=============================================================================");
 				x++;
 		}
 	}
